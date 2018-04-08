@@ -56,8 +56,7 @@ public class PlayerScript : MonoBehaviour {
         {
             if(_timesToJump > 0){
                 Debug.Log(_timesToJump);
-                float force = _airPosition / (3 - _timesToJump);
-                _rigidBody.AddForce(new Vector3(0, force, 0));
+                _rigidBody.AddForce(new Vector3(0, ORIGINAL_FLOAT_SPEED, 0));
                 _timesToJump--;
             }
 
