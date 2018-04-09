@@ -7,6 +7,7 @@ public class GameManagerScript : MonoBehaviour {
 
     public GameObject _chiliCounterUI;
     public int numOfChilis;
+    public int playerLives;
 
     private Text _chiliCounterMessage;
 
@@ -19,6 +20,7 @@ public class GameManagerScript : MonoBehaviour {
 	void Start () {
         _chiliCounterMessage = _chiliCounterUI.GetComponent<Text>();
         numOfChilis = 0;
+        playerLives = 3;
 	}
 	
 	// Update is called once per frame
@@ -29,5 +31,11 @@ public class GameManagerScript : MonoBehaviour {
     public void AddChili(){
         numOfChilis++;
         _chiliCounterMessage.text = "Chilis: " + numOfChilis;
+    }
+
+    public int LoseLife(){
+        playerLives--;
+        Debug.Log("lose life");
+        return playerLives;
     }
 }

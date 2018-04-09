@@ -9,6 +9,8 @@ public class PlayerScript : MonoBehaviour {
         ONAIR
     }
 
+    public GameObject _gameManager;
+
     private static float ORIGINAL_FLOAT_SPEED = 400.0f;
 
     private SpriteRenderer _spriteRenderer;
@@ -22,6 +24,7 @@ public class PlayerScript : MonoBehaviour {
 
 	void Awake(){
         _rigidBody = GetComponent<Rigidbody>();
+        _gameManagerScript = _gameManager.GetComponent<GameManagerScript>();
 
         var spriteObject = this.transform.Find("PlayerMovementSprite");
         _spriteRenderer = spriteObject.GetComponent<SpriteRenderer>();
@@ -58,6 +61,16 @@ public class PlayerScript : MonoBehaviour {
             _inAir = false;
             _timesToJump = 2;
             _airPosition = ORIGINAL_FLOAT_SPEED;
+        }
+
+        if(collision.collider.tag == "Objectile"){
+            int life = _gameManagerScript.LoseLife();
+            collision.collider.gameObject.SetActive(false);
+            Destroy(collision.collider.gameObject);
+            Debug.Log("life: " + life);
+            if(life < 0){
+                Debug.Log("Game Over!");
+            }
         }
 	}
 
