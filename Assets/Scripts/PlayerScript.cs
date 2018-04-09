@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviour {
 
     private static float ORIGINAL_FLOAT_SPEED = 400.0f;
 
+    private SpriteRenderer _spriteRenderer;
     private Rigidbody _rigidBody;
     private int _timesToJump;
     private float _airPosition;
@@ -20,6 +21,9 @@ public class PlayerScript : MonoBehaviour {
 
 	void Awake(){
         _rigidBody = GetComponent<Rigidbody>();
+
+        var spriteObject = this.transform.Find("PlayerMovementSprite");
+        _spriteRenderer = spriteObject.GetComponent<SpriteRenderer>();
 	}
 
 	// Use this for initialization
@@ -33,6 +37,12 @@ public class PlayerScript : MonoBehaviour {
 	void Update () {
         
         float horizontal_movement = Input.GetAxis("Horizontal");
+
+        if (horizontal_movement < 0)
+            _spriteRenderer.flipX = true;
+        else if (horizontal_movement > 0){
+            _spriteRenderer.flipX = false;
+        }
 
         Jump();
 
