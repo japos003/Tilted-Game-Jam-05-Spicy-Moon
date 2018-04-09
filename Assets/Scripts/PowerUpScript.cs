@@ -32,7 +32,7 @@ public class PowerUpScript : MonoBehaviour {
             Debug.Log("should disappear...");
             //TODO: Add to counter
             _gameManagerScript.AddChili();
-            this.gameObject.active = false;
+            this.gameObject.SetActive(false);
             Destroy(this);
 
         }
