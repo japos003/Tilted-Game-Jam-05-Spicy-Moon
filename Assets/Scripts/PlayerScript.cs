@@ -12,6 +12,7 @@ public class PlayerScript : MonoBehaviour {
     private static float ORIGINAL_FLOAT_SPEED = 400.0f;
 
     private SpriteRenderer _spriteRenderer;
+    private GameManagerScript _gameManagerScript;
     private Rigidbody _rigidBody;
     private int _timesToJump;
     private float _airPosition;
