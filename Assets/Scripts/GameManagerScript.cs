@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameManagerScript : MonoBehaviour {
 
     public GameObject _chiliCounterUI;
+    public GameObject _gameOverUI;
     public int numOfChilis;
     public int playerLives;
 
@@ -19,6 +20,7 @@ public class GameManagerScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         _chiliCounterMessage = _chiliCounterUI.GetComponent<Text>();
+        _gameOverUI.SetActive(false);
         numOfChilis = 0;
         playerLives = 3;
 	}
@@ -35,7 +37,9 @@ public class GameManagerScript : MonoBehaviour {
 
     public int LoseLife(){
         playerLives--;
-        Debug.Log("lose life");
+        if(playerLives < 0){
+            _gameOverUI.SetActive(true);
+        }
         return playerLives;
     }
 }
