@@ -1338,6 +1338,7 @@ Transform:
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
+<<<<<<< HEAD
   m_Modification:
     m_TransformParent: {fileID: 1217596432}
     m_Modifications:
@@ -1533,6 +1534,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
+=======
+>>>>>>> parent of ab1f96f... Added Game Over message
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1003199784
@@ -1781,6 +1784,7 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: 5.22
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 114673457410907320, guid: b886f3cfa1ee44f39b834ebd94586126,
         type: 2}
       propertyPath: _gameManager
@@ -1806,6 +1810,8 @@ Prefab:
       propertyPath: m_AllowDynamicResolution
       value: 1
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of ab1f96f... Added Game Over message
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b886f3cfa1ee44f39b834ebd94586126, type: 2}
   m_IsPrefabParent: 0
@@ -2089,7 +2095,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _chiliCounterUI: {fileID: 377621257}
   numOfChilis: 0
-  playerLives: 0
 --- !u!1 &1575728331
 GameObject:
   m_ObjectHideFlags: 0
